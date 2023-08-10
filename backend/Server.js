@@ -6,4 +6,4 @@ const app= express()
 
 const PORT =process.env.port || 5000
 
-app.listen(PORT, () => console.log(`listen on :${PORT}`))
+app.listen(PORT, () => console.log(`listen onnnn :${PORT}`))
