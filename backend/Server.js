@@ -1,6 +1,7 @@
 const express =require('express');
 const mongoose=require('mongoose')
 require('dotenv').config()
+const route =require("./routes/ToDoRoutes")
 
 const app= express()
 
@@ -10,5 +11,7 @@ mongoose
 .connect(process.env.MONGODB_URL)
 .then(() => console.log(`connecting to mongodb....`))
 .catch((err)=> console.log(err))
+
+app.use(route)
 
 app.listen(PORT, () => console.log(`listen onnnn :${PORT}`))
