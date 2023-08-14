@@ -6,4 +6,4 @@ const todoSchema = new mongoose.Schema({
         require:true
     }
 })
-model.exports =mongoose.model('ToDo',todoSchema)
+module.exports =mongoose.model('ToDo',todoSchema)
