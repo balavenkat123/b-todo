@@ -15,6 +15,7 @@ module.exports.saveToDo=async(req,res)=>{
             res.send(data);
             
         })
+    }
 
 module.exports.updateTo=async(req,res)=>{
     const {_id,text}=req.body
@@ -29,5 +30,4 @@ module.exports.deletedTo=async(req,res)=>{
     .findByIdAndDelete(_id)
     .then(()=>res.send('deleted successfully'))
     .catch((err) => console.log(err))
-}
 }
