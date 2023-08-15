@@ -1,4 +1,4 @@
-
+import ToDo from './components/ToDo'
 
 function App() {
   return (
@@ -9,6 +9,9 @@ function App() {
         <div className="top" >
           <input type="text" placeholder="enter task" />
           <div className="add" >Add</div>
+        </div>
+        <div className="list" >
+          {/* <ToDo/> */}
         </div>
       </div>
     </div>
