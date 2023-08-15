@@ -8,6 +8,7 @@ function App() {
         <h1>To Do Tasks...</h1>
         <div className="top" >
           <input type="text" placeholder="enter task" />
+          <div className="add" >Add</div>
         </div>
       </div>
     </div>
