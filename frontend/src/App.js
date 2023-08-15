@@ -13,7 +13,10 @@ function App() {
           <div className="add" >Add</div>
         </div>
         <div className="list">
-          <ToDo/>
+          <ToDo text="hiii hello"/>
+          <ToDo text="hiii hello"/>
+          <ToDo text="hiii hello"/>
+          <ToDo text="hiii hello"/>
         </div>
       </div>
     </div>
