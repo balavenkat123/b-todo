@@ -1,8 +1,10 @@
-import ToDo from './components/ToDo'
+import React from 'react'
+import ToDo from './components/ToDo.js'
 
 function App() {
   return (
     <div className="App">
+      
 
       <div className="container">
         <h1>To Do Tasks...</h1>
@@ -10,8 +12,8 @@ function App() {
           <input type="text" placeholder="enter task" />
           <div className="add" >Add</div>
         </div>
-        <div className="list" >
-          {/* <ToDo/> */}
+        <div className="list">
+          <ToDo/>
         </div>
       </div>
     </div>
