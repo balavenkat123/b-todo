@@ -3,8 +3,8 @@ const {getToDo,saveToDo,updateTo,deletedTo} = require('../Controllers/ToDoContro
 const route = Router();
 
 route.get('/',getToDo)
-route.get('./save',saveToDo)
-route.get('./update',updateTo)
-route.get('./delete',deletedTo)
+route.post('./save',saveToDo)
+route.post('./update',updateTo)
+route.post('./delete',deletedTo)
 
 module.exports =route

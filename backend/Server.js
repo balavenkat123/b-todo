@@ -8,7 +8,7 @@ const route =require("./routes/ToDoRoutes")
 
 const app= express()
 
-const PORT =process.env.port || 5000
+const PORT =process.env.PORT || 5000;
 
 app.use(express.json())
 app.use(cors())
@@ -18,6 +18,7 @@ mongoose
 .then(() => console.log(`connecting to mongodb....`))
 .catch((err)=> console.log(err))
 
-app.use(route)
+app.use(route)  
+
 
 app.listen(PORT, () => console.log(`listen onnnn :${PORT}`))

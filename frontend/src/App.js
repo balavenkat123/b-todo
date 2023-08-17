@@ -4,7 +4,7 @@ import { getAllToDo,addToDo } from './utils/HandleApi.js'
 
 function App() {
 
-  const [toDo,setToDo] = useState([])
+  const [toDo,setToDo] = useState(["hello"])
   const [text,setText]= useState("")
   useEffect(()=>{
     getAllToDo(setToDo)
@@ -21,7 +21,7 @@ function App() {
           value={text}
           onChange={(e)=>setText(e.target.value)}
           />
-          <div className="add" onClick={()=>addToDo(text,setText,setToDo)} >Add</div>
+          <div className="add" onClick={()=>addToDo(text, setText,setToDo)} >Add</div>
         </div>
         <div className="list">
           {toDo.map((item)=> <ToDo key={item._id} text={item.text}/>)}
