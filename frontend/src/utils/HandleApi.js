@@ -1,10 +1,10 @@
 import axios from 'axios';
 
-const baseURL = "http://localhost:5000/"
+const baseurl = "http://localhost:5000"
 
 const getAllToDo = (setToDo)=> {
     axios
-    .get(baseURL)
+    .get(baseurl)
     .then(({data})=>{
         console.log('data--->',data);
         setToDo(data)
@@ -13,7 +13,7 @@ const getAllToDo = (setToDo)=> {
 
 const addToDo = (text,setText,setToDo)=>{
     axios
-    .post(`${baseURL}/save`,{text})
+    .post(`${baseurl}/save`,{text})
     .then((data)=>{
         console.log(data);
         setText("")

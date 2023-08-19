@@ -5,18 +5,17 @@ module.exports.getToDo=async(req,res)=>{
     res.send(toDo)
 }
 module.exports.saveToDo=async(req,res)=>{
-    const {text}=req.body
+    const { text }= req.body
 
     ToDoModel
         .create({text})
         .then((data)=>{
-            console.log("added successfully")
+            console.log("added successfully");
             console.log(data);
             res.send(data);
             
         })
     }
-
 module.exports.updateTo=async(req,res)=>{
     const {_id,text}=req.body
     ToDoModel
