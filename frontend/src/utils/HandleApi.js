@@ -1,25 +1,53 @@
-import axios from 'axios';
+import axios from 'axios'
 
-const baseurl = "http://localhost:5000"
+const baseUrl = "http://localhost:5000"
 
-const getAllToDo = (setToDo)=> {
+const getAllToDo = (setToDo) => {
     axios
-    .get(baseurl)
-    .then(({data})=>{
-        console.log('data--->',data);
-        setToDo(data)
-    })
+        .get(baseUrl)
+        .then(({ data }) => {
+            console.log('data ---> ', data);
+            setToDo(data)
+        })
 }
 
-const addToDo = (text,setText,setToDo)=>{
+const addToDo = (text, setText, setToDo) => {
+
     axios
-    .post(`${baseurl}/save`,{text})
-    .then((data)=>{
-        console.log(data);
-        setText("")
-        getAllToDo(setToDo)
-    })
+        .post(`${baseUrl}/save`, { text })
+        .then((data) => {
+            console.log(data);
+            setText("")
+            getAllToDo(setToDo)
+        })
+        .catch((err) => console.log(err))
 
 }
 
-export {getAllToDo,addToDo}
+const updateToDo = (toDoId, text, setToDo, setText, setIsUpdating) => {
+
+    axios
+        .post(`${baseUrl}/update`, { _id: toDoId, text })
+        .then((data) => {
+            setText("")
+            setIsUpdating(false)
+            getAllToDo(setToDo)
+        })
+        .catch((err) => console.log(err))
+
+}
+
+const deleteToDo = (_id, setToDo) => {
+
+    axios
+        .post(`${baseUrl}/delete`, { _id })
+        .then((data) => {
+            console.log(data)
+            getAllToDo(setToDo)
+        })
+        .catch((err) => console.log(err))
+
+}
+
+
+export { getAllToDo, addToDo, updateToDo, deleteToDo }

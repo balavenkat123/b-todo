@@ -1,17 +1,18 @@
 import React from 'react'
-import { RiDeleteBin3Fill} from "react-icons/ri";
-import { MdEditDocument  } from "react-icons/md";
 
-function ToDo ({text,updateToDo,deleteToDo}) {
-  return (
-    <div className='ToDoo' >
-        <div className='text'>{text}</div>
-        <div className='icons' >
-            <MdEditDocument className="icon" onclick={updateToDo} />
-            <RiDeleteBin3Fill className="icon" onclick={deleteToDo} />
+import {BiEdit} from "react-icons/bi"
+import {AiFillDelete} from "react-icons/ai"
+
+const ToDo = ({text, updateMode, deleteToDo}) => {
+    return (
+        <div className="toDoo">
+            <div className="text">{text}</div>
+            <div className="icons">
+                <BiEdit className='icon' onClick={updateMode} />
+                <AiFillDelete className='icon' onClick={deleteToDo} />
+            </div>
         </div>
-    </div>
-  )
+    )
 }
 
 export default ToDo
